@@ -8,7 +8,7 @@
 \addtolength{\textheight}{1.75in}
 
 \addtolength{\oddsidemargin}{-1.25in}
-\addtolength{\evensidemargin}{-.375in}
+\addtolength{\evensidemargin}{-1.25in}
 \addtolength{\textwidth}{1.75in}
 %\addtolength{\marginparsep}{-10pt}
 %\addtolength{\marginparwidth}{+15pt}
@@ -23,7 +23,8 @@
 \newcommand{\amper}{{\selectfont\itshape\&}}
 % ---- MARGIN YEARS
 %\newcommand{\years}[1]{\marginpar{\scriptsize #1}}
-\newcommand{\years}[1]{\marginpar{\quad \small #1}}
+\usepackage{marginnote}
+\newcommand{\years}[1]{\marginnote{\small #1}}
 % ---- TALK COUNTER
 \newcounter{talknumber}
 \setcounter{talknumber}{1}
@@ -43,12 +44,12 @@
 }{\footnotesize\emph{#2}}}
 % NEW ARTICLE STYLE WITH IMAGE AND NO NUMBERS
 \newcommand{\newarticle}[5]{
-\begin{adjustwidth}{-0.2in}{-1in}  
-\begin{tabular}{p{0.9in}p{7in}}
-\parbox[c]{0.9in}{\includegraphics[width=0.9in]{thumbnails/{#1}}} & \parbox[c]{6in}{{#2} $\cdot$ \href{#4}{#3} \\ {\footnotesize\emph {#5}}}
+\begin{adjustwidth}{-0.05in}{-1in}  
+\begin{tabular}{p{6.25in}p{0.9in}}
+\parbox[c]{6in}{{#2} $\cdot$ \href{#4}{#3} \\ {\footnotesize\emph {#5}}} & \parbox[c]{0.9in}{\includegraphics[width=0.8in]{thumbnails/{#1}}}
 \end{tabular}
 \end{adjustwidth}
-\vspace{0.1in}
+\vspace{0.075in}
 }
 
 % ---- TALKS
@@ -57,6 +58,7 @@
    \scriptsize \scshape
   #2 \\ #1
 }}
+
 \newcommand{\numberedtalk}[2]{
 \noindent\marginpar{
   \parbox[c]{0.25in}{\scriptsize \arabic{talknumber}} 
@@ -71,13 +73,13 @@
 }\spaceTalk\\}
 
 % SPACING
-\newcommand{\spaceEd}{\vspace{0.05ex}}
-\newcommand{\spaceRes}{\vspace{0.05ex}}
-\newcommand{\spaceFell}{\vspace{0.05ex}}
-\newcommand{\spacePub}{\vspace{0.05ex}}
-\newcommand{\spaceTalk}{\vspace{0.05ex}}
-\newcommand{\spaceSoc}{\vspace{0.05ex}}
-\newcommand{\spacePost}{\vspace{0.05ex}}
+%\newcommand{\spaceEd}{\vspace{0.025ex}}
+%\newcommand{\spaceRes}{\vspace{0.025ex}}
+%\newcommand{\spaceFell}{\vspace{0.025ex}}
+%\newcommand{\spacePub}{\vspace{0.025ex}}
+%\newcommand{\spaceTalk}{\vspace{0.025ex}}
+%\newcommand{\spaceSoc}{\vspace{0.025ex}}
+%\newcommand{\spacePost}{\vspace{0.025ex}}
 
 % GRAPHICS
 \usepackage{graphicx}
@@ -104,7 +106,7 @@
 \subsubsectionfont{\bfseries\upshape\normalsize} 
 
 % Control tightness of spacing
-\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\baselinestretch}{1}
 
 % PDF SETUP
 % ---- FILL IN HERE THE DOC TITLE AND AUTHOR
@@ -115,7 +117,7 @@
 \begin{document}
 %\reversemarginpar
 %FILL IN NAME HERE
-{\fontseries{eb}\selectfont \LARGE Sonya M. Hanson}\\
+{\fontseries{eb}\selectfont \LARGE Sonya M. Hanson, Ph.D.}\\
 
 % FILL IN AUTHOR INFORMATION HERE
 \begin{minipage}[t]{1in}
@@ -131,62 +133,64 @@
 \end{tabular}
 \end{minipage}
 
-\section*{Education and positions}
-
-\years{2014--}{\bf Postdoctoral Fellow, Computational Biology Program, Memorial Sloan Kettering Cancer Center}\\
-in the \href{http://www.choderalab.org}{lab of John D. Chodera}. \\
-\\
-\years{2009--2014}{\bf \textsc{Ph.D.} Biochemistry, University of Oxford}\\
-Supervisors: \href{http://neuroscience.nih.gov/Lab.asp?Org_ID=55}{Kenton J. Swartz} (NIH), \href{http://www.bioch.ox.ac.uk/aspsite/index.asp?pageid=705}{Simon Newstead} (Oxford, Biochemistry), \href{http://sbcb.bioch.ox.ac.uk/sansom.php}{Mark. S.P. Sansom} (Oxford, Biochemistry)\\
+\section*{EDUCATION}
+\noindent\years{2009--14}{\bf \textsc{Ph.D.} Biochemistry, University of Oxford}\\
+\emph{Supervisors}: \href{http://neuroscience.nih.gov/Lab.asp?Org_ID=55}{Kenton J. Swartz} (NIH), \href{http://www.bioch.ox.ac.uk/aspsite/index.asp?pageid=705}{Simon Newstead} (Oxford), \href{http://sbcb.bioch.ox.ac.uk/sansom.php}{Mark. S.P. Sansom} (Oxford)\\ \\
+\noindent\years{2005--09}{\bf \textsc{B.S.} Biophysics, Minor: Screenwriting, University of Southern California}, \emph{cum laude}
+\section*{RESEARCH EXPERIENCE}
+\noindent\years{2014--present}{\bf Postdoctoral Fellow, Computational Biology Program, Memorial Sloan Kettering Cancer Center}\\
+PI: \href{http://www.choderalab.org}{John D. Chodera}. \\
+Developing a combined pipeline of automated wetlab experiment and molecular simulation to dissect the contribution of conformational reorganization energies to inhibitor binding. \\
+\noindent\years{2009--14}{\bf \textsc{Ph.D.} Biochemistry, University of Oxford}\\
 Dissertation: {\emph{Structural, biochemical and computational studies of  TRP channel transmembrane domain modularity.}} \\
 Funded via the NIH-Oxford-Cambridge scholars program, specifically the National Institute of Neurological Disorders and Stroke (NINDS) of the National Institutes of Health.\\
-\\
-\years{2005--2009}{\bf \textsc{B.S.} Biophysics, Minor: Screenwriting, University of Southern California}, \emph{cum laude}\\
-Undergraduate research with \href{http://www.med.umich.edu/schnell-lab/}{Santiago Schnell} (\emph{mathematical models of enzyme kinetics}) \\and \href{http://structure.usc.edu/ChenLab/}{Lin Chen }(\emph{computational modeling and docking using nicotinic acetylcholine receptor extracellular domain}).
-
-\section*{Academic achievements, honors, and activities}
-
-\noindent\years{2015} Gordon Research Seminar `Computer Aided Drug Design' - Discussion Leader\\
-\noindent\years{2015}  \emph{Ad hoc} reviewer, \emph{Biochemistry}, 2015-present\\
+\noindent\years{2007--09}{\bf University of Southern California} \\
+Undergraduate research with \href{http://structure.usc.edu/ChenLab/}{Lin Chen }(\emph{computational modeling and docking of antibody-ion channel interaction}). \\
+\noindent\years{2005--07}{\bf Indiana University} \\
+Undergraduate research with \href{http://www.med.umich.edu/schnell-lab/}{Santiago Schnell} (\emph{mathematical models of enzyme kinetics}).
+\section*{ACADEMIC LEADERSHIP EXPERIENCE}
+\noindent\years{2015} Gordon Research Seminar `Computer Aided Drug Design' - Discussion Leader \\
+\noindent\years{2015} \emph{Ad hoc} reviewer, \emph{Biochemistry}, 2015-present \\
 \noindent\years{2015} Biophysical Society 59th Annual Meeting Platform Co-Chair: `Protein-Small Molecule Interactions'\\
-\noindent\years{2014} Speaker at the Telluride TSRC `Molecular Recognition' Workshop\\
-\noindent\years{2013} OXION: Ion Channels and Disease Initiative Day Poster Award\\
-\noindent\years{2013} Bursary Award to Attend 2013 4th RSC/SCI symposium on Ion Channels as Therapeutic Targets\\
-\noindent\years{2009--14} NIH-Oxford-Cambridge Biomedical Research Scholar\\
-
-\noindent\years{2009} B.S. awarded \emph{cum laude} and with `Discovery honors' for original research from USC\\
-\noindent\years{2008} Barry M. Goldwater Scholarship\\
-\noindent\years{2008} Interdisciplinary Award at the USC Undergraduate Research Symposium\\
-\noindent\years{2007--08} Women in Science and Engineering Undergraduate Research Fellowship, USC\\
-\noindent\years{2007--08} Rose Hills Foundation Summer Science and Engineering Fellowship, USC\\
+\noindent\years{2015} MSKCC Postdoctoral Association Board Member
+\section*{AWARDS AND HONORS}
+\noindent\years{2016} Biophysical Society Committee for Professional Opportunities for Women (CPOW) Travel Award \\
+\noindent\years{2015} Materials Computation Center (MCC) Travel Award to attend ``Molecular and chemical kinetics" workshop \\
+\noindent\years{2013} OXION: Ion Channels and Disease Initiative Day Poster Award \\
+\noindent\years{2013} Bursary Award to Attend 2013 4th RSC/SCI symposium on Ion Channels as Therapeutic Targets \\
+\noindent\years{2009--14} NIH-Oxford-Cambridge Biomedical Research Scholar \\
+\noindent\years{2009} B.S. awarded \emph{cum laude} and with `Discovery honors' for original research from USC \\
+\noindent\years{2008} Barry M. Goldwater Scholarship \\
+\noindent\years{2008} Interdisciplinary Award at the USC Undergraduate Research Symposium \\
 \noindent\years{2005--09} National Merit Finalist Presidential Scholarship from the University of Southern California
+\section*{SCIENCE COMMUNICATION ACTIVITIES}
+\noindent\years{2015} Alan Alda Science Communication Boot Camp\\
+\noindent\years{2015} Biophysical Society 59th Annual Meeting Guest Blogger\\
+\noindent\years{2011--13} Founding Editor of the \href{http://www.oxbridgebiotech.com/review/}{Oxbridge Biotech Roundtable Review}: Editor in Chief 2011-12, Oxford Editor 2011-13 \\
 
-\section*{Leadership and communication experience}
+\section*{PROFESSIONAL MEMBERSHIP}
+\noindent\years{2009-present} Biophysical Society\\
+\noindent\years{2008} Member of the organizing committee for Undergraduate Women in Physics Conference at \\
+\indent the University of Southern California
 
-\noindent\years{2015}MSKCC Postdoctoral Association Board Member\\
-\noindent\years{2015}Alan Alda Science Communication Boot Camp\\
-\noindent\years{2015}Biophysical Society 59th Annual Meeting Guest Blogger\\
-\noindent\years{2011-13}Founding Editor of the \href{http://www.oxbridgebiotech.com/review/}{Oxbridge Biotech Roundtable Review}: Editor in Chief 2011-12,
-Oxford Editor 2011-13\\
-\noindent\years{2008}Member of the organizing committee for Undergraduate Women in Physics Conference
-at the University of Southern California
+\section*{TALKS}
+\noindent\years{2015} {\small Developing High-Throughput Fluorescence-Based Assays for Measuring Kinase Inhibitor Free Energies of Binding}\\
+\indent {\small Biophysical Society 59th Annual Meeting - Baltimore, MD}\\
+\indent {\small {\bf Hanson SM}, Prinz JH, Behr JB, Grinaway BP, Rustenburg AS, Beauchamp KA, Parton DL, Chodera JD}\\
+\noindent\years{2014} {\small Tackling complex problems in small molecule recognition using computation and automated biophysical experiment}\\
+\indent {\small Telluride TSRC `Molecular Recognition' Workshop - Telluride, CO}\\
+\indent {\small {\bf Hanson SM}, Prinz JH, Grinaway BP, Rustenburg AS, Beauchamp KA, Behr JB, Parton DL, Chodera JD}\\
 
-
-\section*{Publications}
-
-
-
+\section*{PUBLICATIONS}
 %{\small \it h-index: 22 / i10-index: 33 / first author: 10 / corresponding author: 7 / published or in press: 42}
-
 %{\scriptsize $^*$ asterisks denote that marked authors contributed equally}\\
 %{\scriptsize $^\dag$ daggers denote corresponding-author publication}
-
 %%%%%%
 
-\newarticle{dispense.png}{{\bf Hanson SM}, Ekins S, and Chodera JD. Modeling error in experimental assays using the bootstrap principle: Understanding discrepancies between assays using different dispensing technologies. {\it Journal of Computer-Aided Molecular Design} -- invited article submitted.}{}{http://} {}
+\newarticle{ensembler.png}{Parton DL, Grinaway PB, {\bf Hanson SM}, Beauchamp KA, and Chodera JD. Ensembler: Enabling high-throughput molecular simulations at the superfamily scale {\it PLoS Computational Biology} -- under review, minor corrections submitted.}{bioRxiv}{http://dx.doi.org/10.1101/018036} {}
 %Correct syntax: {DOI}{http://dx.doi.org/10.1007/s10822-013-9689-8} {We show how...}
 
-\newarticle{ensembler.png}{Parton DL, Grinaway PB, {\bf Hanson SM}, Beauchamp KA, and Chodera JD. Ensembler: Enabling high-throughput molecular simulations at the superfamily scale {\it PLoS Computational Biology} -- under review.}{}{http://} {}
+\newarticle{dispense.png}{{\bf Hanson SM}, Ekins S, and Chodera JD. Modeling error in experimental assays using the bootstrap principle: Understanding discrepancies between assays using different dispensing technologies. {\it Journal of Computer-Aided Molecular Design} 29(12):1073-86, 2015}{DOI}{http://dx.doi.org/10.1007/s10822-015-9888-6} {}
 %Correct syntax: {DOI}{http://dx.doi.org/10.1007/s10822-013-9689-8} {We show how...}
 
 \newarticle{TRPC3.png}{{\bf Hanson SM}, Sansom MSP, and Becker EB. Modeling suggests TRPC3 hydrogen bonding and not phosphorylation contributes to the ataxia phenotype of the Moonwalker mouse. {\it Biochemistry} 54(26):4033-41, 2015}{DOI}{http://dx.doi.org/10.1021/acs.biochem.5b00235}{}
@@ -207,12 +211,12 @@ Google Scholar statistics: \href{https://goo.gl/aU1s2e}{https://goo.gl/aU1s2e}
 \hrulefill
 
 % FILL IN THE FULL URL TO YOUR CV
-\begin{flushright}
-{\footnotesize Latest version available online at \href{http://www.sonyahanson.com}{http://www.sonyahanson.com} --- this version current as of \today.
-}\\
-{\footnotesize Based on the \LaTeX \ CV template available at \href{https://github.com/jchodera/latex-cv}{https://github.com/jchodera/latex-cv}.
-}
-\end{flushright}
+%\begin{flushright}
+%{\footnotesize Latest version available online at \href{http://www.sonyahanson.com}{http://www.sonyahanson.com} --- this version current as of \today.
+%}\\
+%{\footnotesize Based on the \LaTeX \ CV template available at \href{https://github.com/jchodera/latex-cv}{https://github.com/jchodera/latex-cv}.
+%}
+%\end{flushright}
 
 
 \end{document}
